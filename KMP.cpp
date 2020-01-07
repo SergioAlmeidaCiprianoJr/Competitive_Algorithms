@@ -45,11 +45,9 @@ int KMP(const string& S, const string& P)
 
 		if(j == m) ++occ;
 
-		int shift = j - bs[j];
-		i += shift;
-		j = max(0, j - shift);
+		i += j - bs[j];
+		j = max(0, bs[j]);
 	}
 
 	return occ;
 }
-
