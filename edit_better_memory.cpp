@@ -28,8 +28,8 @@ int edit(const string& s, const string& t)
 		{
 			int insertion = line[j-1] + c_i;
 			int deletion  = prev[j]	  + c_r;
-			int change	  = prev[j-1] + c_s*(s[i-1] == t[i-1] ? 0 : 1);
-			line[j] = min({ insertion, deletion, change });
+			int change    = prev[j-1] + c_s*(s[i-1] == t[i-1] ? 0 : 1);
+			line[j]       = min({ insertion, deletion, change });
 		}
 		swap(line, prev);
 	}

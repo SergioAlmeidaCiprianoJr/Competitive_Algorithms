@@ -35,10 +35,10 @@ string edit(const string& s, const string& t)
 		{
 			int insertion = st[i][j-1] + c_i;
 			int deletion  = st[i-1][j] + c_r;
-			int change	  = st[i-1][j-1] + c_s*(s[i-1] == t[j-1] ? 0 : 1);
+			int change    = st[i-1][j-1] + c_s*(s[i-1] == t[j-1] ? 0 : 1);
 			st[i][j] = min({ insertion, deletion, change });
-			ps[i][j] = (insertion <= deletion && insertion <= change) ? 'i' :
-					   (deletion  <= change ? 'r' : 's');
+			ps[i][j] = (insertion <= deletion && insertion <= change) ? 
+			           'i' : (deletion  <= change ? 'r' : 's');
 		}
 	
 	int i = m, j = n;
